@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:molahzati/view/home_view.dart';
-
+import 'package:molahzati/view/screens/home_view.dart';
+   
 void main() {
   runApp(const MyApp());
   SystemChrome.setSystemUIOverlayStyle(

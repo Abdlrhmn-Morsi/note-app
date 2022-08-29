@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:molahzati/utilis/my_colors.dart';
+import '../../const/my_colors.dart';
 
 // ignore: must_be_immutable
 class CustomDialog extends StatelessWidget {
@@ -20,10 +20,9 @@ class CustomDialog extends StatelessWidget {
         alignment: Alignment.center,
         height: 130,
         width: 130,
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           color: Colors.transparent,
-                borderRadius: BorderRadius.circular(20),
-
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -49,12 +48,12 @@ class CustomDialog extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: yesFunction,
-                          child: const Align(
+                          child: Align(
                             alignment: Alignment.bottomRight,
                             child: Text(
                               'Yes',
                               style: TextStyle(
-                                  color: Colors.redAccent, fontSize: 25),
+                                  color: Colors.red.shade900, fontSize: 25),
                             ),
                           ),
                         ),
@@ -91,7 +90,7 @@ class CustomDialog extends StatelessWidget {
                       onPressed: yesFunction,
                       padding: const EdgeInsets.all(0),
                       icon: Icon(
-                        Icons.delete,
+                        Icons.close,
                         size: 40,
                         color: Colors.red.shade900,
                       ),

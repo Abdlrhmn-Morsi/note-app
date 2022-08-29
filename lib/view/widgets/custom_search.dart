@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:molahzati/controller/db_controller.dart';
-import 'package:molahzati/utilis/my_colors.dart';
 import 'package:molahzati/view/widgets/note_grid_view.dart';
+import '../../const/my_colors.dart';
 
 class CustomSearch extends SearchDelegate {
   DbController dbController = Get.find();
@@ -30,7 +30,7 @@ class CustomSearch extends SearchDelegate {
 
   @override
   Widget? buildLeading(BuildContext context) {
-    return Container();
+    return const Icon(Icons.search);
   }
 
   @override
@@ -48,8 +48,8 @@ class CustomSearch extends SearchDelegate {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            MyColors.boldColor,
-            MyColors.liteColor,
+              MyColors.grayColor,
+              MyColors.boldColor,
           ],
         ),
       ),
@@ -66,7 +66,7 @@ class CustomSearch extends SearchDelegate {
                 itemBuilder: (context, i) {
                   return NoteGridView(
                     dateTimeCreated: dbController.notes[i].dateTimeCreated,
-                    myTitle: noteList[i].title,
+                    myTitle: noteList[i].title.toString(),
                     myContent: noteList[i].content,
                     i: i,
                   );

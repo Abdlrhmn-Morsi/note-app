@@ -3,13 +3,11 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:molahzati/controller/db_controller.dart';
 import 'package:molahzati/model/note.dart';
-import 'package:molahzati/utilis/string.dart';
-import 'package:molahzati/view/add_note.dart';
+import 'package:molahzati/view/screens/add_note.dart';
 import 'package:molahzati/view/widgets/custom_app_bar.dart';
 import 'package:molahzati/view/widgets/no_note.dart';
 import 'package:molahzati/view/widgets/note_grid_view.dart';
-
-import '../utilis/my_colors.dart';
+import '../../const/my_colors.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -25,7 +23,6 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GetBuilder<DbController>(
-        init: DbController(),
         builder: ((controller) {
           return FutureBuilder<List<Note>>(
               future: controller.getAllNotes(),
@@ -45,7 +42,7 @@ class _HomeViewState extends State<HomeView> {
                     padding: const EdgeInsets.only(top: 100),
                     alignment: Alignment.center,
                     color: MyColors.boldColor,
-                    child: CircularProgressIndicator(
+                    child: const CircularProgressIndicator(
                       color: Colors.black,
                       backgroundColor: Colors.white,
                     ),
@@ -55,21 +52,21 @@ class _HomeViewState extends State<HomeView> {
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
+                        MyColors.grayColor,
                         MyColors.boldColor,
-                        MyColors.liteColor,
                       ],
                     ),
                   ),
                   child: Column(
                     children: [
-                      const SizedBox(height: 60),
+                      const SizedBox(height: 40),
                       CustomAppBar(),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 20),
                       Expanded(
                         child: StaggeredGridView.countBuilder(
                           padding: const EdgeInsets.all(0),
                           itemCount: snapshot.data!.length,
-                          crossAxisCount: 2,
+                          crossAxisCount: 1,
                           mainAxisSpacing: 10,
                           crossAxisSpacing: 0,
                           staggeredTileBuilder: (i) =>
@@ -92,14 +89,15 @@ class _HomeViewState extends State<HomeView> {
         }),
       ),
       floatingActionButton: FloatingActionButton(
-          backgroundColor: MyColors.boldColor,
-          onPressed: () {
-            Get.to(AddNote());
-          },
-          child: const Icon(
-            Icons.add,
-            color: Colors.white,
-          )),
+        backgroundColor: MyColors.boldColor,
+        onPressed: () {
+          Get.to(AddNote());
+        },
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }

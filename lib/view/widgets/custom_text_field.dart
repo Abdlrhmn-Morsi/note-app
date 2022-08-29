@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:molahzati/utilis/my_colors.dart';
 
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
@@ -21,8 +20,8 @@ class CustomTextField extends StatelessWidget {
       maxLines:  null,
       cursorColor: Colors.white,
       style: isTitle
-          ? TextStyle(color: Colors.grey.shade200, fontSize: 27)
-          : TextStyle(color: Colors.grey.shade200, fontSize: 24),
+          ? TextStyle(color: Colors.grey.shade200, fontSize: 22)
+          : TextStyle(color: Colors.grey.shade200, fontSize: 18),
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.all(10),
         hintText: hint,

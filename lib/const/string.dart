@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 
 const String tableNote = 'tableNote';
 const String columnId = 'id';

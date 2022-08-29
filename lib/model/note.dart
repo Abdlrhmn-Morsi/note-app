@@ -1,4 +1,5 @@
-import 'package:molahzati/utilis/string.dart';
+
+import '../const/string.dart';
 
 class Note {
   int? id;

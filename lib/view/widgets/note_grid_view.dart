@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:molahzati/controller/db_controller.dart';
-import 'package:molahzati/utilis/my_colors.dart';
-import 'package:molahzati/view/edite_note.dart';
+import 'package:molahzati/view/screens/edite_note.dart';
 import 'package:molahzati/view/widgets/my_text.dart';
+import '../../const/my_colors.dart';
 import 'custom_dialog.dart';
 
 // ignore: must_be_immutable
@@ -17,7 +17,7 @@ class NoteGridView extends StatelessWidget {
   }) : super(key: key);
   DbController dbController = Get.find();
   int? i;
-  dynamic myTitle;
+  String myTitle;
   dynamic myContent;
   dynamic dateTimeCreated;
 
@@ -42,43 +42,26 @@ class NoteGridView extends StatelessWidget {
             });
       },
       onTap: () {
-        Get.to(EditeNote(
-          argument: i!,
-        ));
+        Get.to(
+          EditeNote(
+            i: i!,
+          ),
+        );
       },
       child: Container(
-        padding: const EdgeInsets.only(top: 10, bottom: 4),
+        padding: const EdgeInsets.only(top: 12, bottom: 4),
         margin: const EdgeInsets.only(left: 10, right: 10),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          gradient: i!.isEven
-              ? const LinearGradient(
-                  colors: [
-                    MyColors.boldColor,
-                    MyColors.liteColor,
-                  ],
-                )
-              : const LinearGradient(
-                  colors: [
-                    MyColors.liteColor,
-                    MyColors.boldColor,
-                  ],
-                ),
-          border: Border.all(color: MyColors.liteColor),
-          boxShadow: [
-            BoxShadow(
-              spreadRadius: 0,
-              blurRadius: 8,
-              color: Colors.white.withOpacity(0.2),
-              offset: const Offset(5, 5),
-            ),
-            BoxShadow(
-              spreadRadius: 0,
-              blurRadius: 10,
-              color: Colors.black.withOpacity(0.2),
-              offset: const Offset(-5, -5),
-            ),
-          ],
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(8),
+            topLeft: Radius.circular(8),
+            bottomRight: Radius.circular(8),
+            topRight: Radius.circular(40),
+          ),
+          border: Border.all(
+            color: MyColors.liteColor,
+            width: 3,
+          ),
         ),
         child: Expanded(
           child: Column(
@@ -87,10 +70,10 @@ class NoteGridView extends StatelessWidget {
             children: [
               //title
               MyText(
-                text: myTitle,
+                text: myTitle.capitalizeFirst,
                 fontSize: 21,
                 maxLines: 1,
-                color: Colors.grey.shade200,
+                color: Colors.grey.shade300,
               ),
               //the line
               Container(
@@ -99,17 +82,17 @@ class NoteGridView extends StatelessWidget {
                   bottom: 2,
                 ),
                 width: Get.width,
-                height: 2,
-                color: MyColors.liteColor,
+                height: 1,
+                color: MyColors.literColor,
               ),
               //content
               MyText(
                 text: myContent,
                 fontSize: 15,
                 maxLines: 2,
-                color: Colors.grey.shade200,
+                color: MyColors.liteColor,
               ),
-            const  SizedBox(height: 5),
+              const SizedBox(height: 5),
               // dateTimeCreated
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -122,7 +105,7 @@ class NoteGridView extends StatelessWidget {
                         text: dateTimeCreated,
                         fontSize: 10,
                         maxLines: 1,
-                        color: Colors.black87,
+                        color: Colors.white,
                       ),
                     ),
                   ),

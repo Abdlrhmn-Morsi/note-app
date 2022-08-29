@@ -1,7 +1,7 @@
 import 'package:molahzati/model/note.dart';
-import 'package:molahzati/utilis/string.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import '../const/string.dart';
 
 class DbHealper {
   DbHealper._();

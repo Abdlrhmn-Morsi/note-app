@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:molahzati/utilis/my_colors.dart';
 import 'package:molahzati/view/widgets/custom_app_bar.dart';
+import '../../const/my_colors.dart';
 
 class NoNote extends StatelessWidget {
   const NoNote({Key? key}) : super(key: key);
@@ -14,8 +14,8 @@ class NoNote extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
+              MyColors.grayColor,
               MyColors.boldColor,
-              MyColors.liteColor,
             ],
           ),
         ),
@@ -31,9 +31,10 @@ class NoNote extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: Center(
-                  child: Lottie.asset(
-                'assets/lottie/empty.json',
-              )),
+                child: Lottie.asset(
+                  'assets/lottie/empty.json',
+                ),
+              ),
             ),
           ],
         ),
