@@ -22,7 +22,7 @@ class NoNote extends StatelessWidget {
         child: Stack(
           children: [
             const SizedBox(
-              height: 60,
+              height: 70,
             ),
             Positioned(
                 top: 60,
@@ -32,7 +32,7 @@ class NoNote extends StatelessWidget {
               alignment: Alignment.center,
               child: Center(
                 child: Lottie.asset(
-                  'assets/lottie/empty.json',
+                  'assets/lottie/empty-loading-state.json',
                 ),
               ),
             ),

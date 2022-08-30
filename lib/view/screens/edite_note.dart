@@ -35,7 +35,7 @@ class EditeNote extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const SizedBox(height: 40),
+            const SizedBox(height: 60),
             CustomAppBar(isAddOrEdit: true),
             Container(
               padding: const EdgeInsets.only(top: 5, bottom: 5),

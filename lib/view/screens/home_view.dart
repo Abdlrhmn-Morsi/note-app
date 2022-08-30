@@ -59,7 +59,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   child: Column(
                     children: [
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 60),
                       CustomAppBar(),
                       const SizedBox(height: 20),
                       Expanded(

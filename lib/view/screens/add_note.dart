@@ -5,7 +5,6 @@ import 'package:intl/intl.dart';
 import 'package:molahzati/controller/db_controller.dart';
 import 'package:molahzati/view/widgets/custom_app_bar.dart';
 import 'package:molahzati/view/widgets/custom_text_field.dart';
-
 import '../../const/my_colors.dart';
 
 class AddNote extends StatelessWidget {
@@ -14,8 +13,9 @@ class AddNote extends StatelessWidget {
   }) : super(key: key);
   final DbController dbController = Get.put(DbController());
   @override
+
   Widget build(BuildContext context) {
-    dbController.titleController.text = '';
+    dbController.titleController.text = "";
 
     dbController.contentController.text = '';
 
@@ -31,7 +31,7 @@ class AddNote extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const SizedBox(height: 40),
+            const SizedBox(height: 60),
             CustomAppBar(isAddOrEdit: true),
             //title
             Container(
